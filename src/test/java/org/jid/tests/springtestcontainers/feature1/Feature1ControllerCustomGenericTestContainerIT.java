@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
@@ -18,7 +19,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 // IMPORTANT: Web environment MUST be RANDOM_PORT!!
-@SpringBootTest(classes = Feature1ControllerCustomGenericTestContainerIT.App.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = Feature1ControllerCustomGenericTestContainerIT.App.class,
+        webEnvironment = WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("integrationtest")
 @AutoConfigureMockMvc
 @Testcontainers

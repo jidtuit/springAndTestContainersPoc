@@ -13,4 +13,8 @@ public class CustomMongoDbTestContainer extends MongoDBContainer {
         super.start();
         System.setProperty("MONGODB_URI", this.getReplicaSetUrl());
     }
+
+    public String getMongoUri() {
+        return this.getReplicaSetUrl();
+    }
 }
